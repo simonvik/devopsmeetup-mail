@@ -161,8 +161,8 @@
 				<section>
 					<h3>Lets send a mail</h3>
 					<ul>
-						<li class="fragment">We want to send a mail from spam@xil.se to foocafespam@devsn.se</li>
-						<li class="fragment">Start by finding the MX record for the receiving domain (devsn.se)
+						<li>We want to send a mail from spam@xil.se to foocafespam@devsn.se</li>
+						<li class="fragment">We start finding the MX record for the receiving domain (devsn.se)
 							<pre><code data-noescape class="no-highlight scrollhack">
 <span class="rfc tx">&gt;&gt;</span><span># dig +short mx devsn.se</span>
 <span class="fragment">
@@ -180,10 +180,12 @@
 				</section>
 				<section>
 					<h3>Lets send a mail</h3>
-					<ul><li>We then connect to the receiving server on port 25</li></ul>
+					<ul>
+						<li>We connect to the receiving server on port 25</li>
+					</ul>
 <pre><code data-noescape class="scrollhack no-highlight" style="overflow:hidden">
 <span>
-<span class="rfc tx">RUN</span><span># nc ASPMX.L.google.com 25</span></span>
+<span class="rfc tx">#</span><span>nc ASPMX.L.google.com 25</span></span>
 <span class="fragment">
 <span class="rfc rx">RFC5321</span><span>ASPMX.L.google.com. [74.125.131.26] 25 (smtp) open.</span></span>
 <span class="fragment">
@@ -210,12 +212,11 @@
 <span class="rfc tx">RFC5321</span><span>DATA</span></span>
 <span class="fragment">
 <span class="rfc rx">RFC5321</span><span>354  Go ahead j2si48746893ljq.255 - gsmtp</span></span>
-<span class="fragment">
-<span class="rfc tx">RFC5322</span><span>From: &lt;spam@xil.se&gt;</span>
-<span class="rfc tx">RFC5322</span><span>To: &lt;foocafespam@devsn.se&gt;</span>
-<span class="rfc tx">RFC5322</span><span>Subject: hello, this is the subject</span>
-<span class="rfc tx">RFC5322</span><span>This is the actual mail</span>
-<span class="rfc tx">RFC5322</span><span>.</span></span></code></pre>
+<span class="fragment"><span class="rfc tx">RFC5322</span><span>From: &lt;spam@xil.se&gt;</span></span>
+<span class="fragment"><span class="rfc tx">RFC5322</span><span>To: &lt;foocafespam@devsn.se&gt;</span></span>
+<span class="fragment"><span class="rfc tx">RFC5322</span><span>Subject: hello, this is the subject</span></span>
+<span class="fragment"><span class="rfc tx">RFC5322</span><span>This is the actual mail</span></span>
+<span class="fragment"><span class="rfc tx">RFC5322</span><span>.</span></span></span></code></pre>
 				</section>
 			</section>
 			<section>
