@@ -23,6 +23,22 @@
 			vertical-align: middle !important;
 			margin-right: 0.4em !important;
 		}
+
+		.rfc {
+			background-color: #f00;
+			margin-left: 1em;
+			margin-right: 1em;
+			margin-bottom: 1em;
+		}
+
+		.rfc.rx {
+			background-color: #00f;
+		}
+		
+		.reveal pre {
+			box-shadow: none;
+		}
+		
 	</style>
 </head>
 
@@ -130,19 +146,76 @@
 			</section>
 			<section>
 				<section>
-					<h3>RFC5321:From vs RFC5322:From</h3>
+					<h3>RFC5321 vs RFC5322</h3>
 					<ul>
-						<li>Mail is split into two standars:
+						<li>Mail is split into two main standards:
 							<ul>
 								<li class="fragment">RFC5321 - Simple Mail Transfer Protocol</li>
 								<li class="fragment">RFC5322 - Internet Message Format</li>
 							</ul>
 						</li>
+						<li class="fragment">Both RFC5321 and RFC5322 contains a from header and they can differ</li>
 						<li class="fragment">Lets play send a mail!</li>
 					</ul>
 				</section>
 				<section>
+					<h3>Lets send a mail</h3>
+					<ul>
+						<li class="fragment">We want to send a mail from spam@xil.se to foocafespam@devsn.se</li>
+						<li class="fragment">Start by finding the MX record for the receiving domain (devsn.se)
+							<pre><code data-noescape class="no-highlight scrollhack">
+<span class="rfc tx">&gt;&gt;</span><span># dig +short mx devsn.se</span>
+<span class="fragment">
+<span class="rfc rx">&lt;&lt;</span><span>1 ASPMX.L.google.com.</span>
+<span class="rfc rx">&lt;&lt;</span><span>5 ALT1.ASPMX.L.google.com.</span>
+<span class="rfc rx">&lt;&lt;</span><span>5 ALT2.ASPMX.L.google.com.</span>
+<span class="rfc rx">&lt;&lt;</span><span>10 ASPMX2.GOOGLEMAIL.com.</span>
+<span class="rfc rx">&lt;&lt;</span><span>10 ASPMX4.GOOGLEMAIL.com.</span>
+</span>
+</code></pre>
+						</li>
 
+
+					</ul>
+				</section>
+				<section>
+					<h3>Lets send a mail</h3>
+					<ul><li>We then connect to the receiving server on port 25</li></ul>
+<pre><code data-noescape class="scrollhack no-highlight" style="overflow:hidden">
+<span>
+<span class="rfc tx">RUN</span><span># nc ASPMX.L.google.com 25</span></span>
+<span class="fragment">
+<span class="rfc rx">RFC5321</span><span>ASPMX.L.google.com. [74.125.131.26] 25 (smtp) open.</span></span>
+<span class="fragment">
+<span class="rfc tx">RFC5321</span><span>ehlo xil.se</span></span>
+<span class="fragment">
+<span class="rfc rx">RFC5321</span><span>250-mx.google.com at your service, [1.3.3.7]</span>
+<span class="rfc rx">RFC5321</span><span>250-SIZE 157286400</span>
+<span class="rfc rx">RFC5321</span><span>250-8BITMIME</span>
+<span class="rfc rx">RFC5321</span><span>250-STARTTLS</span>
+<span class="rfc rx">RFC5321</span><span>250-ENHANCEDSTATUSCODES</span>
+<span class="rfc rx">RFC5321</span><span>250-PIPELINING</span>
+<span class="rfc rx">RFC5321</span><span>250-CHUNKING</span>
+<span class="rfc rx">RFC5321</span><span>250 SMTPUTF8</span>
+</span>
+<span class="fragment">
+<span class="rfc tx">RFC5321</span><span>MAIL FROM: &lt;spam@xil.se&gt;</span></span>
+<span class="fragment">
+<span class="rfc rx">RFC5321</span><span>250 2.1.0 OK x22si43246599ljh.594 - gsmtp</span></span>
+<span class="fragment">
+<span class="rfc tx">RFC5321</span><span>RCPT TO: &lt;foocafespam@devsn.se&gt;</span></span>
+<span class="fragment">
+<span class="rfc rx">RFC5321</span><span>250 2.1.0 OK x22si43246599ljh.594 - gsmtp</span></span>
+<span class="fragment">
+<span class="rfc tx">RFC5321</span><span>DATA</span></span>
+<span class="fragment">
+<span class="rfc rx">RFC5321</span><span>354  Go ahead j2si48746893ljq.255 - gsmtp</span></span>
+<span class="fragment">
+<span class="rfc tx">RFC5322</span><span>From: &lt;spam@xil.se&gt;</span>
+<span class="rfc tx">RFC5322</span><span>To: &lt;foocafespam@devsn.se&gt;</span>
+<span class="rfc tx">RFC5322</span><span>Subject: hello, this is the subject</span>
+<span class="rfc tx">RFC5322</span><span>This is the actual mail</span>
+<span class="rfc tx">RFC5322</span><span>.</span></span></code></pre>
 				</section>
 			</section>
 			<section>
@@ -181,6 +254,25 @@
 
 			// Learn about plugins: https://revealjs.com/plugins/
 			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+		});
+
+		Reveal.on('fragmenthidden', event => {
+			// event.fragment = the fragment DOM element
+			if (event.fragment.parentNode.className.split(' ').indexOf("scrollhack") >= 0) {
+				if(event.fragment.previousElementSibling) {
+					event.fragment.previousElementSibling.scrollIntoViewIfNeeded({ block: 'nearest', inline: 'start' });
+				}
+			}
+		});
+
+
+		Reveal.on('fragmentshown', event => {
+			// event.fragment = the fragment DOM element
+			if (event.fragment.parentNode.className.split(' ').indexOf("scrollhack") >= 0) {
+				event.fragment.scrollIntoViewIfNeeded({ block: 'nearest', inline: 'start' });
+				//event.fragment.parentNode.scrollTop = event.fragment.offsetTop - event.fragment.parentNode.offsetTop;;
+
+			}
 		});
 	</script>
 </body>
