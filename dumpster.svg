@@ -23,9 +23,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="30.245594"
-     inkscape:cx="113.2231"
-     inkscape:cy="82.160727"
+     inkscape:zoom="42.773729"
+     inkscape:cx="105.30997"
+     inkscape:cy="97.115685"
      inkscape:window-width="3840"
      inkscape:window-height="2160"
      inkscape:window-x="0"
@@ -221,12 +221,12 @@
     </g>
     <path
        style="fill:#121212;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 31.233667,33.985587 -10.127067,-7.2235 -0.04098,1.307908 10.220708,7.510474 z"
+       d="m 31.233667,33.985587 -10.197546,-8.135277 0.01423,1.495237 10.235975,8.234922 z"
        id="path18071"
        sodipodi:nodetypes="ccccc" />
     <path
        style="fill:#121212;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 31.123777,18.752133 -10.127067,-7.2235 -0.04098,1.307908 10.220708,7.510474 z"
+       d="m 31.123777,18.752133 -10.230557,-8.547015 0.01313,1.458429 10.270086,8.683468 z"
        id="path18071-0"
        sodipodi:nodetypes="ccccc" />
   </g>
