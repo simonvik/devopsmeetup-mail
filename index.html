@@ -1,0 +1,188 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>Mail - Where mail and DNS Meet</title>
+
+	<link rel="stylesheet" href="reveal.js/dist/reset.css">
+	<link rel="stylesheet" href="reveal.js/dist/reveal.css">
+	<link rel="stylesheet" href="reveal.js/dist/theme/black.css">
+	<link rel="stylesheet" href="dumpster.css">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="reveal.js/plugin/highlight/monokai.css">
+	<style>
+		.imageicon {
+			height: 0.9em !important;
+			background: none !important;
+			border: none !important;
+			box-shadow: none !important;
+			vertical-align: middle !important;
+			margin-right: 0.4em !important;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section data-background-color="black">
+				<h1>EHLO.</h1>
+				<h5>Where mail and DNS meet.</h5>
+				<p>
+					<span><img src="assets/twitter.svg" class="imageicon"><a
+							href="https://twitter.com/sa7sse">sa7sse</a></span>
+					<span><img src="assets/github.svg" class="imageicon"><a
+							href="https://github.com/simonvik/">simonvik</a></span>
+
+				</p>
+
+				<div id="dumpsterfire">
+					<div id="dumpsterback"></div>
+					<div class="fire">
+						<div class="burn heat"></div>
+						<div class="burn heat"></div>
+						<div class="burn heat"></div>
+						<div class="burn heat"></div>
+						<div class="burn heat"></div>
+						<div class="burn heat"></div>
+						<div class="burn heat"></div>
+						<div class="burn heat"></div>
+						<div class="burn heat"></div>
+						<div class="burn heat"></div>
+						<div class="burn heat"></div>
+						<div class="burn heat"></div>
+						<div class="burn heat"></div>
+						<div class="burn heat"></div>
+						<div class="burn heat"></div>
+						<div class="burn heat"></div>
+						<div class="burn heat"></div>
+						<div class="burn heat"></div>
+						<div class="burn heat"></div>
+						<div class="burn heat"></div>
+						<div class="burn heat"></div>
+						<div class="burn heat"></div>
+						<div class="burn heat"></div>
+						<div class="burn heat"></div>
+						<div class="burn heat"></div>
+						<div class="burn heat"></div>
+						<div class="burn heat"></div>
+						<div class="burn heat"></div>
+						<div class="burn heat"></div>
+						<div class="burn heat"></div>
+						<div class="burn heat"></div>
+						<div class="burn heat"></div>
+						<div class="burn heat"></div>
+						<div class="burn heat"></div>
+						<div class="burn heat"></div>
+						<div class="burn heat"></div>
+						<div class="burn heat"></div>
+						<div class="burn heat"></div>
+						<div class="burn heat"></div>
+						<div class="burn heat"></div>
+						<div class="burn"></div>
+						<div class="burn"></div>
+						<div class="burn"></div>
+						<div class="burn"></div>
+						<div class="burn"></div>
+						<div class="burn"></div>
+						<div class="burn"></div>
+						<div class="burn"></div>
+						<div class="burn"></div>
+						<div class="burn"></div>
+						<div class="burn"></div>
+						<div class="burn"></div>
+						<div class="burn"></div>
+						<div class="burn"></div>
+						<div class="burn"></div>
+						<div class="burn"></div>
+						<div class="burn"></div>
+						<div class="burn"></div>
+						<div class="burn"></div>
+						<div class="burn"></div>
+						<div class="burn"></div>
+						<div class="burn"></div>
+						<div class="burn"></div>
+						<div class="burn"></div>
+						<div class="burn"></div>
+						<div class="burn"></div>
+						<div class="burn"></div>
+						<div class="burn"></div>
+						<div class="burn"></div>
+						<div class="burn"></div>
+						<div class="burn"></div>
+						<div class="burn"></div>
+						<div class="burn"></div>
+						<div class="burn"></div>
+						<div class="burn"></div>
+						<div class="burn"></div>
+						<div class="burn"></div>
+						<div class="burn"></div>
+						<div class="burn"></div>
+						<div class="burn"></div>
+					</div>
+
+					<div id="dumpsterfront"></div>
+				</div>
+			</section>
+			<section>
+				<section>
+					<h3>RFC5321:From vs RFC5322:From</h3>
+					<ul>
+						<li>Mail is split into two standars:
+							<ul>
+								<li class="fragment">RFC5321 - Simple Mail Transfer Protocol</li>
+								<li class="fragment">RFC5322 - Internet Message Format</li>
+							</ul>
+						</li>
+						<li class="fragment">Lets play send a mail!</li>
+					</ul>
+				</section>
+				<section>
+
+				</section>
+			</section>
+			<section>
+				<section>
+					<h3>SPF - Sender Policy Framework</h3>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h3>DKIM - DomainKeys Identified Mail</h3>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h3>DMARC - Domain-based Message Authentication, Reporting, and Conformance</h3>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h3>BIMI - Brand Indicators for Message Identification</h3>
+				</section>
+			</section>
+		</div>
+	</div>
+
+	<script src="reveal.js/dist/reveal.js"></script>
+	<script src="reveal.js/plugin/notes/notes.js"></script>
+	<script src="reveal.js/plugin/markdown/markdown.js"></script>
+	<script src="reveal.js/plugin/highlight/highlight.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+		});
+	</script>
+</body>
+
+</html>

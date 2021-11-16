@@ -1,0 +1,867 @@
+
+        #dumpsterfire {
+            position: absolute;
+            top: 80%;
+            transform: scale(0.7);
+            left: -5%;
+            transition: 100ms;
+            z-index: -1000;
+        }
+
+        #dumpsterfire .fire {
+            position: absolute;
+            top: -20px;
+            width: 500px;
+            height: 200px;
+            background: rgba(220, 153, 0, 0.80);
+            filter: blur(20px) contrast(30);
+            border: 250px solid rgba(0,0,0,1);
+            border-bottom-color: transparent;
+            border-radius: 20%;
+            box-sizing: border-box;
+            transform: scale(0.45, 1);
+            z-index: -10000;
+        }
+
+
+
+        #dumpsterfront {
+            background-image: url("dumpster.svg");
+            height: 900px;
+            width: 500px;
+            background-repeat: no-repeat;
+            background-position: 0 420px !important;
+            z-index:10000;
+            position: absolute;
+        }
+
+        #dumpsterback {
+            background-image: url("dumpster_back.svg");
+            height: 900px;
+            width: 500px;
+            background-repeat: no-repeat;
+            background-position: 79px 296px !important;
+            z-index:-10000;
+            position: absolute;
+
+        }
+
+        #dumpsterfire .fire .burn {
+            position: absolute;
+            top: 500px;
+            left: -50px;
+            width: 100px;
+            height: 100px;
+            background: #000;
+            border-radius: 100%;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(1) {
+            height: 3px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(1) {
+            height: 22px;
+            margin-left: 83px;
+            animation: burning 2084ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(2) {
+            height: 9px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(2) {
+            height: 15px;
+            margin-left: 136px;
+            animation: burning 2958ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(3) {
+            height: 2px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(3) {
+            height: 34px;
+            margin-left: -130px;
+            animation: burning 2287ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(4) {
+            height: 2px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(4) {
+            height: 41px;
+            margin-left: 200px;
+            animation: burning 2275ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(5) {
+            height: 3px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(5) {
+            height: 11px;
+            margin-left: 115px;
+            animation: burning 2029ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(6) {
+            height: 2px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(6) {
+            height: 7px;
+            margin-left: -173px;
+            animation: burning 1001ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(7) {
+            height: 5px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(7) {
+            height: 35px;
+            margin-left: -53px;
+            animation: burning 1683ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(8) {
+            height: 5px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(8) {
+            height: 10px;
+            margin-left: -126px;
+            animation: burning 1131ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(9) {
+            height: 8px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(9) {
+            height: 13px;
+            margin-left: -145px;
+            animation: burning 2584ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(10) {
+            height: 6px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(10) {
+            height: 47px;
+            margin-left: 209px;
+            animation: burning 1248ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(11) {
+            height: 9px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(11) {
+            height: 4px;
+            margin-left: -112px;
+            animation: burning 2111ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(12) {
+            height: 9px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(12) {
+            height: 25px;
+            margin-left: 48px;
+            animation: burning 1455ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(13) {
+            height: 9px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(13) {
+            height: 28px;
+            margin-left: -70px;
+            animation: burning 1210ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(14) {
+            height: 9px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(14) {
+            height: 41px;
+            margin-left: -24px;
+            animation: burning 1074ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(15) {
+            height: 1px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(15) {
+            height: 37px;
+            margin-left: -121px;
+            animation: burning 2681ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(16) {
+            height: 8px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(16) {
+            height: 46px;
+            margin-left: 31px;
+            animation: burning 2328ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(17) {
+            height: 3px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(17) {
+            height: 22px;
+            margin-left: -85px;
+            animation: burning 1977ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(18) {
+            height: 3px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(18) {
+            height: 24px;
+            margin-left: 227px;
+            animation: burning 2820ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(19) {
+            height: 6px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(19) {
+            height: 14px;
+            margin-left: -13px;
+            animation: burning 1568ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(20) {
+            height: 1px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(20) {
+            height: 41px;
+            margin-left: 96px;
+            animation: burning 1493ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(21) {
+            height: 3px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(21) {
+            height: 24px;
+            margin-left: 88px;
+            animation: burning 1170ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(22) {
+            height: 5px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(22) {
+            height: 37px;
+            margin-left: -215px;
+            animation: burning 2447ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(23) {
+            height: 4px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(23) {
+            height: 34px;
+            margin-left: -176px;
+            animation: burning 1882ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(24) {
+            height: 4px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(24) {
+            height: 33px;
+            margin-left: 102px;
+            animation: burning 2972ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(25) {
+            height: 9px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(25) {
+            height: 33px;
+            margin-left: -208px;
+            animation: burning 2695ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(26) {
+            height: 10px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(26) {
+            height: 42px;
+            margin-left: -216px;
+            animation: burning 2345ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(27) {
+            height: 2px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(27) {
+            height: 13px;
+            margin-left: -205px;
+            animation: burning 2399ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(28) {
+            height: 2px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(28) {
+            height: 5px;
+            margin-left: -139px;
+            animation: burning 2176ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(29) {
+            height: 10px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(29) {
+            height: 6px;
+            margin-left: 208px;
+            animation: burning 1223ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(30) {
+            height: 3px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(30) {
+            height: 46px;
+            margin-left: -66px;
+            animation: burning 1364ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(31) {
+            height: 4px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(31) {
+            height: 2px;
+            margin-left: -161px;
+            animation: burning 1019ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(32) {
+            height: 1px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(32) {
+            height: 18px;
+            margin-left: 234px;
+            animation: burning 2641ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(33) {
+            height: 7px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(33) {
+            height: 14px;
+            margin-left: -87px;
+            animation: burning 2764ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(34) {
+            height: 7px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(34) {
+            height: 3px;
+            margin-left: 19px;
+            animation: burning 2039ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(35) {
+            height: 7px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(35) {
+            height: 24px;
+            margin-left: 164px;
+            animation: burning 2074ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(36) {
+            height: 7px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(36) {
+            height: 22px;
+            margin-left: 222px;
+            animation: burning 1136ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(37) {
+            height: 9px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(37) {
+            height: 21px;
+            margin-left: -106px;
+            animation: burning 2554ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(38) {
+            height: 9px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(38) {
+            height: 31px;
+            margin-left: -140px;
+            animation: burning 1244ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(39) {
+            height: 10px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(39) {
+            height: 17px;
+            margin-left: -106px;
+            animation: burning 1183ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(40) {
+            height: 6px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(40) {
+            height: 28px;
+            margin-left: 117px;
+            animation: burning 2191ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(41) {
+            height: 7px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(41) {
+            height: 43px;
+            margin-left: -73px;
+            animation: burning 2883ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(42) {
+            height: 2px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(42) {
+            height: 3px;
+            margin-left: 35px;
+            animation: burning 2158ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(43) {
+            height: 6px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(43) {
+            height: 12px;
+            margin-left: -178px;
+            animation: burning 1313ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(44) {
+            height: 4px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(44) {
+            height: 11px;
+            margin-left: -217px;
+            animation: burning 1003ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(45) {
+            height: 3px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(45) {
+            height: 33px;
+            margin-left: -77px;
+            animation: burning 1389ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(46) {
+            height: 4px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(46) {
+            height: 17px;
+            margin-left: 199px;
+            animation: burning 1968ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(47) {
+            height: 8px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(47) {
+            height: 19px;
+            margin-left: -129px;
+            animation: burning 1379ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(48) {
+            height: 6px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(48) {
+            height: 39px;
+            margin-left: -71px;
+            animation: burning 2150ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(49) {
+            height: 2px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(49) {
+            height: 42px;
+            margin-left: -214px;
+            animation: burning 1360ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(50) {
+            height: 9px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(50) {
+            height: 36px;
+            margin-left: 171px;
+            animation: burning 1530ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(51) {
+            height: 1px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(51) {
+            height: 6px;
+            margin-left: -74px;
+            animation: burning 2283ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(52) {
+            height: 2px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(52) {
+            height: 43px;
+            margin-left: -7px;
+            animation: burning 2921ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(53) {
+            height: 2px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(53) {
+            height: 35px;
+            margin-left: 202px;
+            animation: burning 1694ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(54) {
+            height: 2px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(54) {
+            height: 50px;
+            margin-left: -141px;
+            animation: burning 2808ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(55) {
+            height: 10px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(55) {
+            height: 19px;
+            margin-left: 71px;
+            animation: burning 1685ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(56) {
+            height: 8px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(56) {
+            height: 12px;
+            margin-left: -56px;
+            animation: burning 1394ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(57) {
+            height: 6px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(57) {
+            height: 19px;
+            margin-left: 50px;
+            animation: burning 2775ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(58) {
+            height: 5px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(58) {
+            height: 1px;
+            margin-left: -231px;
+            animation: burning 1606ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(59) {
+            height: 1px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(59) {
+            height: 49px;
+            margin-left: -50px;
+            animation: burning 1419ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(60) {
+            height: 5px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(60) {
+            height: 25px;
+            margin-left: -249px;
+            animation: burning 2712ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(61) {
+            height: 9px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(61) {
+            height: 16px;
+            margin-left: 108px;
+            animation: burning 1088ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(62) {
+            height: 10px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(62) {
+            height: 47px;
+            margin-left: -223px;
+            animation: burning 1637ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(63) {
+            height: 1px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(63) {
+            height: 26px;
+            margin-left: -84px;
+            animation: burning 1969ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(64) {
+            height: 9px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(64) {
+            height: 26px;
+            margin-left: -206px;
+            animation: burning 2729ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(65) {
+            height: 2px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(65) {
+            height: 43px;
+            margin-left: 74px;
+            animation: burning 2758ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(66) {
+            height: 4px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(66) {
+            height: 8px;
+            margin-left: 213px;
+            animation: burning 2407ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(67) {
+            height: 8px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(67) {
+            height: 42px;
+            margin-left: 226px;
+            animation: burning 2052ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(68) {
+            height: 5px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(68) {
+            height: 9px;
+            margin-left: 231px;
+            animation: burning 1148ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(69) {
+            height: 7px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(69) {
+            height: 6px;
+            margin-left: -209px;
+            animation: burning 1189ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(70) {
+            height: 4px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(70) {
+            height: 5px;
+            margin-left: 26px;
+            animation: burning 2394ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(71) {
+            height: 1px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(71) {
+            height: 1px;
+            margin-left: -59px;
+            animation: burning 2457ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(72) {
+            height: 6px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(72) {
+            height: 37px;
+            margin-left: 65px;
+            animation: burning 2672ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(73) {
+            height: 3px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(73) {
+            height: 12px;
+            margin-left: 142px;
+            animation: burning 2417ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(74) {
+            height: 10px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(74) {
+            height: 32px;
+            margin-left: -133px;
+            animation: burning 1884ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(75) {
+            height: 5px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(75) {
+            height: 21px;
+            margin-left: 54px;
+            animation: burning 2544ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(76) {
+            height: 2px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(76) {
+            height: 36px;
+            margin-left: 86px;
+            animation: burning 2882ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(77) {
+            height: 1px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(77) {
+            height: 43px;
+            margin-left: 98px;
+            animation: burning 2790ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(78) {
+            height: 4px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(78) {
+            height: 32px;
+            margin-left: 70px;
+            animation: burning 2777ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(79) {
+            height: 2px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(79) {
+            height: 44px;
+            margin-left: 78px;
+            animation: burning 2417ms -3000ms infinite linear;
+        }
+
+        #dumpsterfire .fire .burn.heat:nth-child(80) {
+            height: 3px;
+        }
+
+        #dumpsterfire .fire .burn:nth-child(80) {
+            height: 31px;
+            margin-left: 53px;
+            animation: burning 2221ms -3000ms infinite linear;
+        }
+
+        @keyframes burning {
+            0% {
+                transform: translateY(0);
+            }
+
+            100% {
+                transform: translateY(-600px);
+            }
+        }
