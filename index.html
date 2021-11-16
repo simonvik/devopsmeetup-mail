@@ -32,13 +32,12 @@
 		}
 
 		.rfc.rx {
-			background-color: #00f;
+			background-color: #42affa;
 		}
-		
+
 		.reveal pre {
 			box-shadow: none;
 		}
-		
 	</style>
 </head>
 
@@ -183,7 +182,7 @@
 					<ul>
 						<li>We connect to the receiving server on port 25</li>
 					</ul>
-<pre><code data-noescape class="scrollhack no-highlight" style="overflow:hidden">
+					<pre><code data-noescape class="scrollhack no-highlight" style="overflow:hidden">
 <span>
 <span class="rfc tx">#</span><span>nc ASPMX.L.google.com 25</span></span>
 <span class="fragment">
@@ -261,28 +260,40 @@
 		Reveal.on('fragmenthidden', event => {
 			// event.fragment = the fragment DOM element
 			if (event.fragment.parentNode.className.split(' ').indexOf("scrollhack") >= 0) {
-				if(event.fragment.previousElementSibling) {
-					event.fragment.previousElementSibling.scrollIntoViewIfNeeded({ block: 'nearest', inline: 'start' });
+				if (event.fragment.previousElementSibling) {
+					if (typeof event.fragment.previousElementSibling.scrollIntoViewIfNeeded !== "undefined") {
+						event.fragment.previousElementSibling.scrollIntoViewIfNeeded({ behavior: "smooth", block: 'nearest', inline: 'start' });
+					} else {
+						setTimeout(function(){
+							event.fragment.previousElementSibling.scrollIntoView({ behavior: "smooth", block: 'nearest', inline: 'start' });
+						}, 200);
+					}
 				}
 			}
 		});
 
 
 		Reveal.on('fragmentshown', event => {
-			// event.fragment = the fragment DOM element
 			if (event.fragment.parentNode.className.split(' ').indexOf("scrollhack") >= 0) {
-				event.fragment.scrollIntoViewIfNeeded({ block: 'nearest', inline: 'start' });
+				if (typeof event.fragment.scrollIntoViewIfNeeded !== "undefined") {
+					event.fragment.scrollIntoViewIfNeeded({ behavior: "smooth", block: 'nearest', inline: 'start' });
+				} else {
+					setTimeout(function(){
+						event.fragment.scrollIntoView({ behavior: "smooth", block: 'nearest', inline: 'start' });
+					}, 200);
+
+				}
 				//event.fragment.parentNode.scrollTop = event.fragment.offsetTop - event.fragment.parentNode.offsetTop;;
 
 			}
 		});
 
-			Reveal.configure({
-				keyboard: {
-					40: 'prev',
-					38: 'next'
-				}
-			});
+		Reveal.configure({
+			keyboard: {
+				40: 'prev',
+				38: 'next'
+			}
+		});
 
 	</script>
 </body>
