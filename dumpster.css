@@ -1,9 +1,8 @@
 
         #dumpsterfire {
             position: absolute;
-            top: 80%;
-            transform: scale(0.7);
-            left: -5%;
+            top: 30%;
+            left: 25%;
             transition: 100ms;
             z-index: -1000;
         }
