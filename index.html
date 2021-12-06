@@ -251,8 +251,8 @@ k
 					<h3>SPF - How SPF is impleted</h3>
 					<ul>
 						<li>Uses TXT record in DNS</li>
-						<li class="fragment">The record always starts with v=spf1</li>
 						<li class="fragment">Needs to be published for each sub domain</li>
+						<li class="fragment">The record always starts with v=spf1</li>
 						<li class="fragment">Lets look at a real record</li>
 					</ul>
 
@@ -305,16 +305,15 @@ k
 				<section>
 					<h3>DMARC - Domain-based Message Authentication, Reporting, and Conformance</h3>
 					<ul>
-						<li>Builds on two exisiting technologies: SPF, DKIM</li>
-						<li>Uses TXT records records in DNS hosted under _dmarc.SENDINGDOMAIN.TLD</li>
-						<li>Provides feedback to domain owners when RUA is specified</li>
-						<li>Covers the whole sending domain</li>
-						<li>Lets look at a dmarc dns record</li>
-						<li>The record always starts with v=DMARC1;</li>
+						<li>Builds on two exisiting technologies: SPF, DKIM and requires alignment</li>
+						<li class="fragment">Uses TXT records records in DNS hosted under _dmarc.SENDINGDOMAIN.TLD</li>
+						<li class="fragment">Provides feedback to domain owners when RUA is specified</li>
+						<li class="fragment"> Covers the whole sending domain</li>
+						<li class="fragment">The record always starts with v=DMARC1;</li>
 					</ul>
 				</section>
 				<section>
-					<h3>DMARC - Domain-based Message Authentication, Reporting, and Conformance</h3>
+					<h3>DMARC - Example</h3>
 					<pre><code>v=DMARC1; p=reject; rua=mailto:rua@example.com;</code></pre>
 					<ul>
 						<li>rua= (Rua aggregated reports) specifies an email that will receive reports</li>
