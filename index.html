@@ -172,6 +172,7 @@ k <!doctype html>
 						<li class="fragment">Lets play send a mail!</li>
 					</ul>
 				</section>
+				
 				<section>
 					<h3>Lets send a mail</h3>
 					<ul>
@@ -244,15 +245,53 @@ k <!doctype html>
 					</ul>
 				</section>
 				<section>
-					<h3>SPF - Sender Policy Framework</h3>
+					<h3>SPF - How SPF is impleted</h3>
 					<ul>
-						<li class="fragment"></li>
+						<li>TXT record in DNS</li>
+						<li class="fragment">The record always starts with v=spf1</li>
+						<li class="fragment">Lets look at a real record</li>
+					</ul>
+
+					<pre class="fragment"><code class="no-highlight"># dig +short TXT one.com
+"v=spf1 include:_spf.one.com ~all"</code></pre>
+
+<pre class="fragment"><code class="no-highlight"># dig +short TXT _spf.one.com
+"v=spf1 ip4:195.47.247.0/24 ip4:91.198.169.0/24 ... ~all"</code></pre>
+				</section>
+				<section>
+					<h3>SPF - Mechanism</h3>
+					<ul>
+						<li>all</li>
+						<li class="fragment">include</li>
+						<li class="fragment">a</li>
+						<li class="fragment">mx</li>
+						<li class="fragment">ip4</li>
+						<li class="fragment">ip6</li>
+						<li class="fragment">exists</li>
+						<li class="fragment">- fail, ~ softfail, + pass, ? neutral</li>
+					</ul>
+				</section>
+				<section>
+					<h3>SPF - Alignment</h3>
+					<ul>
+						<li>RFC5221 from (return-path, envelope from, ...) vs RFC5322 (mail body)</li>
 					</ul>
 				</section>
 			</section>
 			<section>
 				<section>
 					<h3>DKIM - DomainKeys Identified Mail</h3>
+					<ul>
+						<li class="fragment">Way to cryptographicly verify that a mails sender and content comes from the specified domain</li>
+						<li class="fragment">Uses the from in the header to verify the sender</li>
+						
+					</ul>
+				</section>
+				<section>
+					<h3>DKIM - Alignment</h3>
+					<ul>
+						<li>The d= field need to match RFC5221 from (return-path, envelope from, ...)</li>
+					</ul>
 				</section>
 			</section>
 			<section>
