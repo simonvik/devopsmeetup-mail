@@ -247,8 +247,9 @@ k <!doctype html>
 				<section>
 					<h3>SPF - How SPF is impleted</h3>
 					<ul>
-						<li>TXT record in DNS</li>
+						<li>uses TXT record in DNS</li>
 						<li class="fragment">The record always starts with v=spf1</li>
+						<li class="fragment">Needs to be published for each sub domain</li>
 						<li class="fragment">Lets look at a real record</li>
 					</ul>
 
@@ -282,9 +283,10 @@ k <!doctype html>
 				<section>
 					<h3>DKIM - DomainKeys Identified Mail</h3>
 					<ul>
-						<li class="fragment">Way to cryptographicly verify that a mails sender and content comes from the specified domain</li>
+						<li>Way to cryptographicly verify that a mails sender and content comes from the specified domain</li>
+						<li class="fragment">Uses TXT records in DNS to publish the public key</li>
 						<li class="fragment">Uses the from in the header to verify the sender</li>
-						
+						<li class="fragment">Uses the [IDENTIFIER]._domainkey.[SENDERDOMAIN.TLD] subdomain</li>
 					</ul>
 				</section>
 				<section>
@@ -297,11 +299,32 @@ k <!doctype html>
 			<section>
 				<section>
 					<h3>DMARC - Domain-based Message Authentication, Reporting, and Conformance</h3>
+					<ul>
+						<li>Builds on two exisiting technologies: SPF, DKIM</li>
+						<li>Uses TXT records records in DNS hosted under _dmarc.SENDINGDOMAIN.TLD</li>
+						<li>Provides feedback to domain owners when RUA is specified</li>
+						<li>Covers the whole sending domain</li>
+						<li>Lets look at a dmarc dns record</li>
+					</ul>
+				</section>
+				<section>
+					<h3>DMARC - Domain-based Message Authentication, Reporting, and Conformance</h3>
+					<pre><code>v=DMARC1; p=reject; rua=mailto:rua@example.com;</code></pre>
+					<ul>
+						<li>Rua aggregated reports</li>
+						<li>p (policy) can be either none, reject or quarantine</li>
+
+					</ul>
 				</section>
 			</section>
 			<section>
 				<section>
 					<h3>BIMI - Brand Indicators for Message Identification</h3>
+					<ul>
+						<li>Icons in the mail inbox</li>
+						<li>An idea to encourage companys to use dmarc with strict rules</li>
+						
+					</ul>
 				</section>
 			</section>
 		</div>
