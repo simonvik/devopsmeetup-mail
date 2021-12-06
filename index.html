@@ -1,4 +1,5 @@
-k <!doctype html>
+k
+<!doctype html>
 <html>
 
 <head>
@@ -172,7 +173,7 @@ k <!doctype html>
 						<li class="fragment">Lets play send a mail!</li>
 					</ul>
 				</section>
-				
+
 				<section>
 					<h3>Lets send a mail</h3>
 					<ul>
@@ -239,15 +240,17 @@ k <!doctype html>
 				<section>
 					<h3>SPF - Sender Policy Framework</h3>
 					<ul>
-						<li class="fragment">A way to authenticate the sender of an email</li>
+						<li>A way to authenticate the sender of an email</li>
 						<li class="fragment">Uses the return-path/envelope from address to identify the SPF record</li>
-						<li class="fragment">A SPF record contains a list of IP addresses that are allowed to send emails</li>
+						<li class="fragment">A SPF record contains a list of IP addresses that are allowed to send
+							emails</li>
+						<li class="fragment">Can cause problems when mails get forwarded</li>
 					</ul>
 				</section>
 				<section>
 					<h3>SPF - How SPF is impleted</h3>
 					<ul>
-						<li>uses TXT record in DNS</li>
+						<li>Uses TXT record in DNS</li>
 						<li class="fragment">The record always starts with v=spf1</li>
 						<li class="fragment">Needs to be published for each sub domain</li>
 						<li class="fragment">Lets look at a real record</li>
@@ -256,20 +259,20 @@ k <!doctype html>
 					<pre class="fragment"><code class="no-highlight"># dig +short TXT one.com
 "v=spf1 include:_spf.one.com ~all"</code></pre>
 
-<pre class="fragment"><code class="no-highlight"># dig +short TXT _spf.one.com
+					<pre class="fragment"><code class="no-highlight"># dig +short TXT _spf.one.com
 "v=spf1 ip4:195.47.247.0/24 ip4:91.198.169.0/24 ... ~all"</code></pre>
 				</section>
 				<section>
 					<h3>SPF - Mechanism</h3>
 					<ul>
 						<li>all</li>
-						<li class="fragment">include</li>
-						<li class="fragment">a</li>
-						<li class="fragment">mx</li>
-						<li class="fragment">ip4</li>
-						<li class="fragment">ip6</li>
-						<li class="fragment">exists</li>
-						<li class="fragment">- fail, ~ softfail, + pass, ? neutral</li>
+						<li>include</li>
+						<li>a</li>
+						<li>mx</li>
+						<li>ip4</li>
+						<li>ip6</li>
+						<li>exists</li>
+						<li>- fail, ~ softfail, + pass, ? neutral</li>
 					</ul>
 				</section>
 				<section>
@@ -283,10 +286,12 @@ k <!doctype html>
 				<section>
 					<h3>DKIM - DomainKeys Identified Mail</h3>
 					<ul>
-						<li>Way to cryptographicly verify that a mails sender and content comes from the specified domain</li>
+						<li>Way to cryptographicly verify that a mails sender and content comes from the specified
+							domain</li>
 						<li class="fragment">Uses TXT records in DNS to publish the public key</li>
 						<li class="fragment">Uses the from in the header to verify the sender</li>
 						<li class="fragment">Uses the [IDENTIFIER]._domainkey.[SENDERDOMAIN.TLD] subdomain</li>
+						<li class="fragment">Lets look at a real life example</li>
 					</ul>
 				</section>
 				<section>
@@ -305,27 +310,42 @@ k <!doctype html>
 						<li>Provides feedback to domain owners when RUA is specified</li>
 						<li>Covers the whole sending domain</li>
 						<li>Lets look at a dmarc dns record</li>
+						<li>The record always starts with v=DMARC1;</li>
 					</ul>
 				</section>
 				<section>
 					<h3>DMARC - Domain-based Message Authentication, Reporting, and Conformance</h3>
 					<pre><code>v=DMARC1; p=reject; rua=mailto:rua@example.com;</code></pre>
 					<ul>
-						<li>Rua aggregated reports</li>
-						<li>p (policy) can be either none, reject or quarantine</li>
-
+						<li>rua= (Rua aggregated reports) specifies an email that will receive reports</li>
+						<li>p= (policy) can be either none, reject or quarantine</li>
 					</ul>
 				</section>
 			</section>
 			<section>
 				<section>
 					<h3>BIMI - Brand Indicators for Message Identification</h3>
+					<img src="assets/boozt.com.png">
 					<ul>
-						<li>Icons in the mail inbox</li>
-						<li>An idea to encourage companys to use dmarc with strict rules</li>
-						
+						<li>Icons in the mail inbox (like favicons in email)</li>
+						<li class="fragment">Can be really expensive</li>
+						<li class="fragment">An idea to encourage companys to use dmarc with strict rules</li>
+						<li class="fragment">Requires that the mail passed both SPF and DKIM</li>
+						<li class="fragment">It use default._bimi.[SENDERDOMAIN.TLD]</li>
 					</ul>
 				</section>
+				<section>
+					<h3>BIMI - How its implemented</h3>
+					<pre><code>dig TXT +short default._bimi.boozt.com.
+
+v=BIMI1; l=https://nw.booztcdn.com/bimi/Boozt.svg; 
+	a=https://nw.booztcdn.com/bimi/boozt_fashion_ab.pem</code></pre>
+					<ul>
+						<li>l= specifys a SVG that should be loaded (this is free and no one use it)</li>
+						<li class="fragment">a= specifies a cryptographicly signed svg thats expensive</li>
+					</ul>
+				</section>
+
 			</section>
 		</div>
 	</div>
@@ -375,14 +395,14 @@ k <!doctype html>
 
 			}
 		});
-
+		/*
 		Reveal.configure({
 			keyboard: {
 				40: 'prev',
 				38: 'next'
 			}
 		});
-
+		*/
 	</script>
 </body>
 
